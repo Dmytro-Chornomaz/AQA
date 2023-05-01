@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello World", "Hello World\Hello World.csproj", "{36E77788-3D58-4BBA-AEA8-2E45422E6FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hello World", "Hello World\Hello World.csproj", "{36E77788-3D58-4BBA-AEA8-2E45422E6FFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "First autotest", "First autotest\First autotest.csproj", "{29CC7020-27A4-40B7-AD4A-373069DA23D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon", "Amazon\Amazon.csproj", "{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{36E77788-3D58-4BBA-AEA8-2E45422E6FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36E77788-3D58-4BBA-AEA8-2E45422E6FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36E77788-3D58-4BBA-AEA8-2E45422E6FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29CC7020-27A4-40B7-AD4A-373069DA23D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29CC7020-27A4-40B7-AD4A-373069DA23D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29CC7020-27A4-40B7-AD4A-373069DA23D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29CC7020-27A4-40B7-AD4A-373069DA23D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
