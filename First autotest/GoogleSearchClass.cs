@@ -9,6 +9,10 @@ namespace First_autotest
         [Test]
         public void GoogleSearch()
         {
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArguments("--disable-notifications");
+            //options.AddArguments("disable-infobars");
+
             IWebDriver driver = new ChromeDriver();
 
             driver.Navigate().GoToUrl("https://google.com");

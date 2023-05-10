@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hello World", "Hello World\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "First autotest", "First autotest\First autotest.csproj", "{29CC7020-27A4-40B7-AD4A-373069DA23D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon", "Amazon\Amazon.csproj", "{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List search", "Amazon\List search.csproj", "{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
