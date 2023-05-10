@@ -65,5 +65,30 @@ namespace Amazon
 
 
         }
+
+        [Test]
+        public void ClickAndSendKeys()
+        {
+            string mobileModel = "Apple";
+
+            var driver = new ChromeDriver();
+
+            driver.Manage().Window.Maximize();
+
+            driver.Navigate().GoToUrl("https://mta.ua/telefoni-ta-smartfoni");
+
+            IWebElement txtFilterByManufacturer = driver.FindElement(By.XPath
+                ("//*[text()='Виробники']/../following-sibling::div[@class='filter-category__search']//input"));
+
+            txtFilterByManufacturer.SendKeys(mobileModel);
+
+            Thread.Sleep(1000);
+
+            IWebElement checkByMobileModel = driver.FindElement(By.XPath
+                ($"//span[text()='{mobileModel}']/parent::div"));
+
+
+            checkByMobileModel.Click();
+        }
     }
 }
