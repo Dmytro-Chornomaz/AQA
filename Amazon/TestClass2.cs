@@ -90,5 +90,26 @@ namespace Amazon
 
             checkByMobileModel.Click();
         }
+
+        [Test]
+        public void TestKeyMethod()
+        {
+            var driver = new ChromeDriver();
+
+            driver.Manage().Window.Maximize();
+
+            driver.Navigate().GoToUrl("https://mta.ua/telefoni-ta-smartfoni");
+
+            IWebElement txtsearch = driver.FindElement(By.XPath
+                ("//input[@name='search']"));
+
+            txtsearch.SendKeys("Hello!");
+
+            txtsearch.SendKeys(Keys.Backspace);
+
+            txtsearch.SendKeys(Keys.Enter);
+
+            
+        }
     }
 }
