@@ -108,8 +108,28 @@ namespace Amazon
             txtsearch.SendKeys(Keys.Backspace);
 
             txtsearch.SendKeys(Keys.Enter);
+        }
 
-            
+        [Test]
+        public void TestGetAttributeAndText()
+        {
+            var driver = new ChromeDriver();
+
+            driver.Manage().Window.Maximize();
+
+            driver.Navigate().GoToUrl("https://mta.ua/telefoni-ta-smartfoni");
+
+            IWebElement header = driver.FindElement(By.XPath("//h1"));
+
+            string headerText = header.Text;
+
+            string headerClass = header.GetAttribute("class");
+
+            Console.WriteLine($"Text is {headerText}");
+
+            Console.WriteLine($"Class is {headerClass}");
+
+            driver.Close();
         }
     }
 }
