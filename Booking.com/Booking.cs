@@ -36,7 +36,7 @@ namespace Booking.com
             driver = new ChromeDriver(options);
             //driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.booking.com/index.en-gb.html");
-            
+
         }
 
         [Test]
@@ -46,28 +46,57 @@ namespace Booking.com
             IWebElement txtDestination = driver.FindElement(By.XPath("//input[@name='ss']"));
             IWebElement btnDate = driver.FindElement(By.XPath("//button[text()='Check-in date']"));
 
-            
+
             txtDestination.Clear();
             txtDestination.SendKeys(city);
 
             btnDate.Click();
 
-            DateTime tomorrow = DateTime.Now.AddDays(1);
-            string checkInYear = tomorrow.Year.ToString();
-            string checkInMonth = ((Months)tomorrow.Month).ToString();
-            string checkInDay = tomorrow.Day.ToString();
+            DateTime checkInDate = DateTime.Now.AddDays(1);
+            string checkInYear = checkInDate.Year.ToString();
+            string checkInMonth = ((Months)checkInDate.Month).ToString();
+            string checkInDay = checkInDate.Day.ToString();
 
-            DateTime checkOutDate = tomorrow.AddDays(5);
+            DateTime checkOutDate = checkInDate.AddDays(5);
             string checkOutYear = checkOutDate.Year.ToString();
             string checkOutMonth = ((Months)checkOutDate.Month).ToString();
             string checkOutDay = checkOutDate.Day.ToString();
 
-            IWebElement firstWindow = driver.FindElement(By.XPath
+            IWebElement leftWindow = driver.FindElement(By.XPath
                 ($"//div[@data-testid='searchbox-datepicker-calendar']//h3[text()='{checkInMonth}']/.."));
-            IWebElement dateToPick = firstWindow.FindElement(By.XPath($".//*[text()='{checkInDay}']"));
-            dateToPick.Click();
+            IWebElement CheckInDateToPick = leftWindow.FindElement(By.XPath($".//*[text()='{checkInDay}']"));
+            CheckInDateToPick.Click();
+
+            IWebElement rightWindow = driver.FindElement(By.XPath
+                ($"//div[@data-testid='searchbox-datepicker-calendar']//h3[text()='{checkOutMonth}']/.."));
+            IWebElement CheckOutDateToPick = rightWindow.FindElement(By.XPath($".//*[text()='{checkOutDay}']"));
+            CheckOutDateToPick.Click();
+
+            IWebElement searchButton = driver.FindElement(By.XPath("//span[normalize-space()='Search']"));
+            searchButton.Click();
+
+            List<IWebElement> hotels = driver.FindElements(By.XPath("//div[@data-testid='property-card']")).ToList();
+            foreach (var hotel in hotels)
+            {
+                IWebElement hotelAddress = hotel.FindElement(By.XPath(".//span[@data-testid='address']"));
+                string hotelAddressText = hotelAddress.Text;
+                StringAssert.Contains(city, hotelAddressText, $"Actual hotel address doesn`t contain {city}");
+            }
+
+            string actualDateStart = driver.FindElement(By.XPath
+                ("//button[@data-testid='date-display-field-start']/descendant::div")).Text;
+            string actualDayStart = actualDateStart.Split(' ')[1];
+            string actualMonthStart = actualDateStart.Split(' ')[2];
+            Assert.AreEqual(checkInDate, actualDayStart, "Check-in day is not equal to expexted");
+            StringAssert.Contains(checkInMonth, actualMonthStart, "Check-in month is not equal to expexted");
 
 
+            string actualDateEnd = driver.FindElement(By.XPath
+                ("//button[@data-testid='date-display-field-end']/descendant::div")).Text;
+            string actualDayEnd = actualDateEnd.Split(' ')[1];
+            string actualMonthEnd = actualDateEnd.Split(' ')[2];
+            Assert.AreEqual(checkOutDay, actualDayEnd, "Check-out day is not equal to expexted");
+            StringAssert.Contains(checkOutMonth, actualMonthEnd, "Check-out month is not equal to expexted");
         }
 
         [TearDown]
