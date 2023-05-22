@@ -39,12 +39,19 @@ namespace Booking.com
                 case "chrome":
                     driver = new ChromeDriver(chromeOptions);
                     break;
+
                 case "firefox":
                     string geckoDriverPath = "D:\\QA\\C#\\AQA\\Booking.com\\bin\\Debug\\net7.0\\geckodriver.exe";
                     FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(geckoDriverPath);
                     driver = new FirefoxDriver(service);
                     break;
                     default: throw new Exception("You selected a wrong browser");
+
+                case "headless":
+                    ChromeOptions headlessChromeOptions = new ChromeOptions();
+                    headlessChromeOptions.AddArguments("--headless");
+                    driver = new ChromeDriver(headlessChromeOptions);
+                    break;
             }
 
             return new Driver(driver);
