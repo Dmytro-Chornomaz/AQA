@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 
-namespace Booking.com
+namespace Booking_Framework
 {
     public class DriverFactory
     {        

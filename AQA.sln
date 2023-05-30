@@ -9,11 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "First autotest", "First aut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AQA_1", "Amazon\AQA_1.csproj", "{4039B2A4-BD3A-43CC-B2FE-AA3BE06C7C79}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.com", "Booking.com\Booking.com.csproj", "{7F8AEA9E-D006-4DF5-973B-3F80EE080A35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking Framework", "Booking.com\Booking Framework.csproj", "{7F8AEA9E-D006-4DF5-973B-3F80EE080A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POM_page objects", "POM_page objects\POM_page objects.csproj", "{96C057B0-FFF6-405E-BDE8-7EC2D173820C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POM_page objects", "POM_page objects\POM_page objects.csproj", "{96C057B0-FFF6-405E-BDE8-7EC2D173820C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POM_tests", "POM_tests\POM_tests.csproj", "{32FF5FEA-F6B4-4998-AC39-308BFF005A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POM_tests", "POM_tests\POM_tests.csproj", "{32FF5FEA-F6B4-4998-AC39-308BFF005A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking Tests", "Booking Tests\Booking Tests.csproj", "{1DE2250E-A693-431F-8BA8-8339E0875A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking Page Objects", "Booking Page Objects\Booking Page Objects.csproj", "{29068506-D329-4F5B-8072-034F0378274E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{32FF5FEA-F6B4-4998-AC39-308BFF005A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32FF5FEA-F6B4-4998-AC39-308BFF005A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32FF5FEA-F6B4-4998-AC39-308BFF005A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE2250E-A693-431F-8BA8-8339E0875A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE2250E-A693-431F-8BA8-8339E0875A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE2250E-A693-431F-8BA8-8339E0875A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE2250E-A693-431F-8BA8-8339E0875A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29068506-D329-4F5B-8072-034F0378274E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29068506-D329-4F5B-8072-034F0378274E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29068506-D329-4F5B-8072-034F0378274E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29068506-D329-4F5B-8072-034F0378274E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
