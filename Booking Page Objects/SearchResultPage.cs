@@ -14,13 +14,13 @@ namespace Booking_Page_Objects
 
         private List<Element> hotelsList => driver.FindElementsByXpath("//div[@data-testid='property-card']");
 
-        private Element actualDateStart => driver.FindElementByXpath
+        private Element ActualDateStart => driver.FindElementByXpath
             ("//button[@data-testid='date-display-field-start']");
-        private Element actualDateEnd = driver.FindElementByXpath
+        private Element ActualDateEnd = driver.FindElementByXpath
             ("//button[@data-testid='date-display-field-end']");
 
-        public string GetActualDateStartText() => actualDateStart.GetText();
-        public string GetActualDateEndText() => actualDateEnd.GetText();
+        public string GetActualDateStartText() => ActualDateStart.GetText();
+        public string GetActualDateEndText() => ActualDateEnd.GetText();
 
 
         public List<string> GetHotelsAdresses()

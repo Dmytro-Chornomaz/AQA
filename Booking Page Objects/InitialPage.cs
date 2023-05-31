@@ -44,9 +44,10 @@ namespace Booking_Page_Objects
             CheckOutDateToPick.Click();
         }
 
-        public void ClickSearch()
+        public void ClickSearch(string destination)
         {
             searchButton.Click();
+            driver.WaitUntilPageTitleContainsText(3, $"Hotels in {destination}");    
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Booking_Tests
             initialPage.SelectMonthAndDay(checkInMonth, checkInDay, checkOutMonth, checkOutDay);
 
             Console.WriteLine("Clicking search button");
-            initialPage.ClickSearch();
+            initialPage.ClickSearch(city);
 
             Console.WriteLine("Getting a list of hotels");
             List<string> hotelAdresses = searchResultPage.GetHotelsAdresses();
@@ -42,10 +42,10 @@ namespace Booking_Tests
             {
                 StringAssert.Contains(city, hotelAdress, $"Actual hotel address doesn`t contain {city}");
             }
-
+            
             string actualDateStart = searchResultPage.GetActualDateStartText();
             string actualDateEnd = searchResultPage.GetActualDateEndText();
-
+            
             VerifyTheFirstDateIsDisplayedInSearch(actualDateStart, checkInDay, checkInMonth);
             VerifyTheSecondDateIsDisplayedInSearch(actualDateEnd, checkOutDay, checkOutMonth);
         }
