@@ -90,6 +90,13 @@ namespace Booking_Framework
                     ($"Page doesn`t contains {titleText} in title, \n{e.StackTrace}, \n{e.Message}");
             }
         }
+
+        public void ExecuteJSCommand(string command)
+        {
+            IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor)driver;
+
+            javaScriptExecutor.ExecuteScript(command);
+        }
     }
 
 }
