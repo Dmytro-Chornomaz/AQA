@@ -13,25 +13,43 @@ namespace API_Helper
         [Test]
         public void ApiSampleTest()
         {
-            PetStoreClient petStoreClient = new PetStoreClient();
+            try
+            {
+                PetStoreClient petStoreClient = new PetStoreClient();
 
-            string result = petStoreClient.CreatePet();
+                string result = petStoreClient.CreatePet();
 
-            StringAssert.Contains("Peach", result);
+                StringAssert.Contains("Peach", result);
 
-            Console.WriteLine(result);
+                Console.WriteLine(result);
+            }
+            catch (Exception ex)
+            {
+                TakeScreenshot();
+                throw ex;
+            }
+            
         }
 
         [Test]
         public void OneMoreApiSampleTest()
         {
-            PetStoreClient petStoreClient = new PetStoreClient();
+            try
+            {
+                PetStoreClient petStoreClient = new PetStoreClient();
 
-            string result = petStoreClient.GetPetById(3232);
+                string result = petStoreClient.GetPetById(3232);
 
-            StringAssert.Contains("Peach", result);
+                StringAssert.Contains("Peach", result);
 
-            Console.WriteLine(result);
+                Console.WriteLine(result);
+            }
+            catch (Exception ex)
+            {
+                TakeScreenshot();
+                throw ex;
+            }
+            
         }
     }
 }

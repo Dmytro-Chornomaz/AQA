@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -58,7 +59,7 @@ namespace Booking_Framework
                 throw new WebDriverTimeoutException
                     ($"Element didn`t disappear from DOM, \n{e.StackTrace}, \n{e.Message}");
             }
-            
+
         }
 
         public void WautUntilElementExists(int secondsToWait, string webElementXPath)
@@ -96,6 +97,20 @@ namespace Booking_Framework
             IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor)driver;
 
             javaScriptExecutor.ExecuteScript(command);
+        }
+
+        public string TakeScreenshot(string pathToSave)
+        {
+            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+
+            string title = TestContext.CurrentContext.Test.MethodName +
+                DateTime.Now.ToString("dd-MM-yyyy_HH_mm_ss");
+            FileInfo address = new FileInfo($"{pathToSave}\\");
+            string finalScreenshotName = address + title + ".png";
+
+            screenshot.SaveAsFile(finalScreenshotName);
+
+            return finalScreenshotName;
         }
     }
 

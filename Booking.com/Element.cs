@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,11 @@ namespace Booking_Framework
         public string GetText()
         {
             return element.Text;
+        }
+
+        public string GetTextByXpath(string xPath)
+        {
+            return element.FindElement(By.XPath(xPath)).Text;
         }
     }
 }

@@ -29,9 +29,12 @@ namespace Booking_Page_Objects
 
             foreach (var hotel in hotelsList)
             {
-                Element hotelAddress = hotel.FindElementByXpath(".//span[@data-testid='address']");
-                string hotelAddressText = hotelAddress.GetText();
+                //Element hotelAddress = hotel.FindElementByXpath(".//span[@data-testid='address']");
+                //string hotelAddressText = hotelAddress.GetText();
+
+                string hotelAddressText = hotel.GetTextByXpath(".//span[@data-testid='address']");
                 result.Add(hotelAddressText);
+
             }
             return result;
         }

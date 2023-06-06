@@ -14,24 +14,42 @@ namespace DataBaseHelper
         [Test]
         public void SampleTest()
         {
-            int testId = 3;
+            try
+            {
+                int testId = 3;
 
-            string userName = UserSql.GetUserNameById(testId);
+                string userName = UserSql.GetUserNameById(testId);
 
-            Assert.AreEqual("Valeriia", userName, "Got wrong username");
-            Assert.AreNotEqual("Nataliia", userName, "");
+                Assert.AreEqual("Valeriia", userName, "Got wrong username");
+                Assert.AreNotEqual("Nataliia", userName, "");
+            }
+            catch (Exception ex)
+            {
+                TakeScreenshot();
+                throw ex;
+            }
+            
         }
 
 
         [Test]
         public void OneMoreSampleTest()
         {
-            int testId = 3;
+            try
+            {
+                int testId = 3;
 
-            var user = UserSql.GetUserById(testId);
+                var user = UserSql.GetUserById(testId);
 
-            Assert.AreEqual("Valeriia", user.UserName, "Got wrong username");
-            Assert.AreEqual(74561, user.Mobile, "Got wrong mobile");
+                Assert.AreEqual("Valeriia", user.UserName, "Got wrong username");
+                Assert.AreEqual(74561, user.Mobile, "Got wrong mobile");
+            }
+            catch (Exception ex)
+            {
+                TakeScreenshot();
+                throw ex;
+            }
+            
         }
     }
 }
