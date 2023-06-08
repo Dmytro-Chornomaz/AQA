@@ -10,7 +10,7 @@ namespace Booking_Tests
         [Test]
         public void VerifyGenericSearchResults()
         {
-            //try
+            try
             {
                 string city = "New York";
                 InitialPage initialPage = new InitialPage(driver);
@@ -51,12 +51,11 @@ namespace Booking_Tests
                 VerifyTheFirstDateIsDisplayedInSearch(actualDateStart, checkInDay, checkInMonth);
                 VerifyTheSecondDateIsDisplayedInSearch(actualDateEnd, checkOutDay, checkOutMonth);
             }
-            //catch (Exception ex)
-            //{
-            //    TakeScreenshot();
-            //    throw ex;
-            //}
-            
+            catch (Exception ex)
+            {                
+                throw ex;
+            }
+
         }
         private void VerifyTheFirstDateIsDisplayedInSearch(string actualDateStart, string checkInDay, string checkInMonth)
         {
