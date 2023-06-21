@@ -4,7 +4,6 @@ using Booking_Framework;
 using NLog;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using NUnit.Framework.Internal.Commands;
 using ER = AventStack.ExtentReports;
 
 namespace Booking_Tests
@@ -26,11 +25,9 @@ namespace Booking_Tests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            string dir = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\net7.0", "");
-
             var testClassName = TestContext.CurrentContext.Test.ClassName;
             var date = DateTime.Now.ToString(" dd-MM-yyyy_(HH_mm_ss)");
-            var outputDir = $"{dir}\\Report\\{testClassName}{date}\\";
+            var outputDir = $"{Pathes.REPORTS_PATH}\\{testClassName}{date}\\";
             var param = "Automation_Report.html";
 
             ExtentHtmlReporter extentHtmlReporter = new ExtentHtmlReporter($"{outputDir}{param}");
@@ -42,15 +39,14 @@ namespace Booking_Tests
         public void Init()
         {
             extentTest = extentReports.CreateTest(TestContext.CurrentContext.Test.MethodName);
-            driver = new DriverFactory().GetDriverByName("chrome");
+            driver = new DriverFactory().GetDriverByName(BrowsersEnum.Chrome);
             driver.GoToUrl("https://www.booking.com/index.en-gb.html");
         }
 
         public string TakeScreenshot()
         {
-            string dir = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\net7.0", "");
-            string finalPath = dir + "Screenshots";
-            string screenShotFullName = driver.TakeScreenshot(finalPath);
+            string dir = Pathes.SCREENSOTS_PATH;
+            string screenShotFullName = driver.TakeScreenshot(dir);
             return screenShotFullName;
         }
 

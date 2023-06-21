@@ -1,18 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 
 namespace Booking_Framework
 {
     public class DriverFactory
     {        
-        public Driver GetDriverByName(string browserName)
+        public Driver GetDriverByName(BrowsersEnum browser)
         {
             ChromeOptions chromeOptions = new ChromeOptions();
 
@@ -34,20 +28,20 @@ namespace Booking_Framework
 
             IWebDriver driver;
 
-            switch (browserName)
+            switch (browser)
             {
-                case "chrome":
+                case BrowsersEnum.Chrome:
                     driver = new ChromeDriver(chromeOptions);
                     break;
 
-                case "firefox":
+                case BrowsersEnum.Firefox:
                     string geckoDriverPath = "D:\\QA\\C#\\AQA\\Booking.com\\bin\\Debug\\net7.0\\geckodriver.exe";
                     FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(geckoDriverPath);
                     driver = new FirefoxDriver(service);
                     break;
                     default: throw new Exception("You selected a wrong browser");
 
-                case "headless":
+                case BrowsersEnum.Headless:
                     ChromeOptions headlessChromeOptions = new ChromeOptions();
                     headlessChromeOptions.AddArguments("--headless");
                     driver = new ChromeDriver(headlessChromeOptions);

@@ -1,4 +1,5 @@
 ﻿using Booking_Framework;
+using Booking_Models;
 using Booking_Page_Objects;
 using NUnit.Framework;
 
@@ -12,7 +13,10 @@ namespace Booking_Tests
         {
             try
             {
-                string city = "New York";
+                string pathToJson = Pathes.MODELS_PATH + "\\SearchResultParams.json";
+                SearchResultParams parameters = ParametersResolver.Resolve<SearchResultParams>(pathToJson);
+
+                string city = parameters.City;
                 InitialPage initialPage = new InitialPage(driver);
                 SearchResultPage searchResultPage = new SearchResultPage(driver);
 

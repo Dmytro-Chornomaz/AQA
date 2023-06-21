@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Booking Models\Booking Models.csproj" />
     <ProjectReference Include="..\Booking Page Objects\Booking Page Objects.csproj" />
     <ProjectReference Include="..\Booking.com\Booking Framework.csproj" />
   </ItemGroup>
