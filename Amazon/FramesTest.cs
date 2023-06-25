@@ -48,12 +48,12 @@ namespace AQA_1
             driver.Navigate().GoToUrl("https://demoqa.com/frames");
             driver.Manage().Window.Maximize();
 
-            var iframes = driver.FindElements(By.TagName("iframe"));
             IWebElement bigFrame = driver.FindElement(By.XPath(" //*[@id='frame1']"));
 
             driver.SwitchTo().Frame(bigFrame);
 
             IWebElement element = driver.FindElement(By.XPath("//h1[@id='sampleHeading']"));
+            Console.WriteLine(element.Text);
 
             driver.SwitchTo().DefaultContent();
             var outOfFrameElement = driver.FindElement(By.XPath(" //*[@id='framesWrapper']/div"));

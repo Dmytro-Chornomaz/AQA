@@ -16,7 +16,7 @@ namespace AQA_1
         public void JSTest()
         {
             driver.ExecuteJSCommand("window.scrollTo(0, document.body.scrollHeight);");
-            Helper.Wait(3);
+            //Helper.Wait(3);
             logger.Info("This is Info");
             logger.Warn("This is Warn");
             logger.Error("This is Error");

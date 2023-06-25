@@ -57,7 +57,7 @@ namespace Booking_Framework
 
         }
 
-        public void WautUntilElementExists(int secondsToWait, string webElementXPath)
+        public void WaitUntilElementExists(int secondsToWait, string webElementXPath)
         {
             try
             {

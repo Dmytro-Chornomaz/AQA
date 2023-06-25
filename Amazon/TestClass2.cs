@@ -12,7 +12,6 @@ namespace Amazon
     internal class TestClass2
     {
         [Test]
-
         public void SearchListOfElements()
         {
             //ChromeOptions options = new ChromeOptions();

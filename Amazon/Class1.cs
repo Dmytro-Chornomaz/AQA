@@ -131,7 +131,6 @@ namespace Amazon
         }
 
         [TearDown]
-
         public void CloseBrowser()
         {
             driver.Close();

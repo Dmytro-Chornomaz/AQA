@@ -5,7 +5,7 @@ using OpenQA.Selenium.Firefox;
 namespace Booking_Framework
 {
     public class DriverFactory
-    {        
+    {
         public Driver GetDriverByName(BrowsersEnum browser)
         {
             ChromeOptions chromeOptions = new ChromeOptions();
@@ -39,13 +39,15 @@ namespace Booking_Framework
                     FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(geckoDriverPath);
                     driver = new FirefoxDriver(service);
                     break;
-                    default: throw new Exception("You selected a wrong browser");
+
 
                 case BrowsersEnum.Headless:
                     ChromeOptions headlessChromeOptions = new ChromeOptions();
                     headlessChromeOptions.AddArguments("--headless");
                     driver = new ChromeDriver(headlessChromeOptions);
                     break;
+
+                default: throw new Exception("You selected a wrong browser");
             }
 
             return new Driver(driver);
