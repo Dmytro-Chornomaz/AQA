@@ -3,12 +3,12 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
-
 namespace Booking_Framework
 {
     public class Driver
     {
         public IWebDriver driver { get; set; }
+
         public Driver(IWebDriver driver)
         {
             this.driver = driver;

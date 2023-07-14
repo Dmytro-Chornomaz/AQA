@@ -19,8 +19,9 @@ namespace AQA_1
 
             Actions actions = new Actions(driver);
 
-            IWebElement input = driver.FindElement(By.XPath("//*[@name='q']"));            
+            IWebElement input = driver.FindElement(By.XPath("//*[@name='q']"));
 
+            //.Perform()!!!
             actions.KeyDown(Keys.Shift).SendKeys("hello").KeyUp(Keys.Shift).Perform();          
         }
 
@@ -43,6 +44,7 @@ namespace AQA_1
 
             Console.WriteLine(droppableChild.Text);
 
+            //.Perform()!!!
             actions.DragAndDrop(draggable, droppable).Perform();
 
             droppableChild = droppable.FindElement(By.TagName("p"));

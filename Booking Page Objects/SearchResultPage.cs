@@ -6,8 +6,6 @@ namespace Booking_Page_Objects
     {
         public SearchResultPage(Driver driver) : base(driver) { }
 
-        //private List<Element> hotelsList => driver.FindElementsByXpath("//div[@data-testid='property-card']");
-
         private Element ActualDateStart => driver.FindElementByXpath
             ("//button[@data-testid='date-display-field-start']");
         private Element ActualDateEnd = driver.FindElementByXpath
@@ -24,7 +22,6 @@ namespace Booking_Page_Objects
 
             foreach (var hotel in hotelsList)
             {
-                //Element hotelAddress = hotel.FindElementByXpath(".//span[@data-testid='address']");
                 string hotelAddressText = hotel.GetText();
                 result.Add(hotelAddressText);
             }

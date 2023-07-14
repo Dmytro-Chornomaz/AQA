@@ -55,10 +55,10 @@ namespace AQA_1
 
             var allWindowHandles = driver.WindowHandles.ToList();
 
-            string? secondWindow = allWindowHandles.
+            string? secondWindowHandle = allWindowHandles.
                 Where(x => x != parentWindowHandle).Select(x => x).FirstOrDefault();
 
-            driver.SwitchTo().Window(secondWindow);
+            driver.SwitchTo().Window(secondWindowHandle);
 
             var sampleHeading = driver.FindElement(By.XPath("//h1"));
 
